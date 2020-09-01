@@ -1,2 +1,2 @@
-# Html-academy-education-project
-Проект для резюме
+# Нямушка
+Тестовое задание FunBox
