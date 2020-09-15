@@ -1,0 +1,38 @@
+.container {
+  margin: 0 auto;
+  width: 320px;
+
+  @media (min-width: @tablet-width) {
+    width: 712px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1120px;
+  }
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+
+  white-space: nowrap;
+
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(100%);
+  overflow: hidden;
+}
+
+.section-title {
+  padding: 0;
+  margin: 0;
+
+  font-family: @font;
+  font-size: 36px;
+  font-weight: 100;
+  line-height: 1;
+  color: #ffffff;
+}
