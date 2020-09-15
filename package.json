@@ -1,0 +1,32 @@
+{
+  "name": "cat-food",
+  "version": "1.0.0",
+  "description": "Тестовое задание FunBox",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp styles",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malyushkina/FunBox-test.git"
+  },
+  "author": "Малюшкина Евгения",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malyushkina/FunBox-test/issues"
+  },
+  "homepage": "https://github.com/Malyushkina/FunBox-test#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-less": "^4.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
