@@ -1,4 +1,28 @@
 .card {
+  background: url("../../img/card-border.svg") 100% 100%, url("../../img/cat@1x.png") -23px, url("../../img/card-bg.svg") 100% 100%;
+  background-repeat: no-repeat;
+  background-position-y: 150%;
+  background-size: 100%;
+  width: 326px;
+  min-height: 492px;
+  border-radius: 15px;
+
+  &:first-of-type {
+    grid-column-start: 2;
+    grid-column-end: 6;
+  }
+
+  &:nth-of-type(2) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+  }
+
+  &:nth-of-type(3) {
+    grid-column-start: 4;
+    grid-column-end: -1;
+
+  }
 
   // .card__wrapper
 
@@ -19,6 +43,15 @@
   // .card__features
 
   &__features {}
+
+  // .card__img
+
+  // &__img {
+  //   background-image: url("../../img/cat@1x.png");
+  //   width: 100%;
+  //   height: 270px;
+  //   overflow: hidden;
+  // }
 
   // .card__weight
 
