@@ -5,6 +5,7 @@
 	background-color: #000000;
 	background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent, rgba(0, 0, 0, 0.3)), url("../../img/bg@1x.jpg") 100% 100% repeat;
 	background-size: cover;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .catalog {
@@ -14,19 +15,15 @@
 }
 
 .cards {
-	
+
 	@media (min-width: @tablet-width) {
 		display: grid;
 		grid-template-columns: repeat(6, 1fr);
-		grid-template-rows: auto auto;	
-	justify-content: center;
+		grid-template-rows: auto auto;
+		justify-content: center;
 	}
-	
-	  @media (min-width: @desktop-width) {
+
+	@media (min-width: @desktop-width) {
 		width: 1120px;
-	  }
-
-	// .cards__item
-
-	&__item {}
+	}
 }
