@@ -10,20 +10,22 @@
 
 .catalog {
 	position: relative;
-	// top: 50%;
+	// top: 50vh;
 	// transform: translateY(-50%);
 }
 
 .cards {
 
 	@media (min-width: @tablet-width) {
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
-		grid-template-rows: auto auto;
-		justify-content: center;
+		// display: grid;
+		// grid-template-columns: repeat(6, 1fr);
+		// grid-template-rows: auto auto;
+		// justify-content: center;
 	}
 
 	@media (min-width: @desktop-width) {
 		width: 1120px;
+		display: flex;
+		justify-content: space-between;
 	}
 }

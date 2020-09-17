@@ -1,64 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.min.css" />
+    <title>Нямушка</title>
+    <!-- Pixel Glass -->
+    <style>
+      HTML {
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        /* Mobile layout by default */
+        background-image: url("img/320.png");
+      }
+      /* Tablet */
+      @media (min-width: 760px) {
+        HTML {
+          /* Tablet layout */
+          background-image: url("img/760.png");
+        }
+      }
+      /* Desktop */
+      @media (min-width: 1280px) {
+        HTML {
+          /* Desktop layout */
+          background-image: url("./img/prototype.png");
+        }
+      }
+    </style>
+    <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet" />
+    <script src="../node_modules/pixel-glass/script.js"></script>
+    <!-- // Pixel Glass -->
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/styles.min.css" />
-  <title>Нямушка</title>
-</head>
-
-<body class="page-body">
-  <h1 class="visually-hidden">Нямушка - профессиональный корм для кошек</h1>
-  <section class="catalog">
-    <div class="container">
-      <h2 class="section-title">Ты сегодня покормил кота?</h2>
-      <div class="cards">
-        <div class="cards__item card">
-          <div class="card__wrapper">
-            <p class="card__slogan">Сказочное заморское яство</p>
-            <h3 class="card__title">Нямушка</h3>
-            <p class="card__subtitle">с фуа-гра</p>
-            <ul class="card__features features">
-              <li class="features__item"><b>10</b> порций</li>
-              <li class="features__item">мышь в подарок</li>
-            </ul>
-            <div class="card__weight weight">
-              <span class="weight__number">0,5</span>кг
+  <body class="page-body">
+    <h1 class="visually-hidden">Нямушка - профессиональный корм для кошек</h1>
+    <section class="catalog">
+      <div class="container">
+        <h2 class="section-title">Ты сегодня покормил кота?</h2>
+        <div class="cards">
+          <div class="cards__item card">
+            <div class="card__wrapper">
+              <p class="card__slogan">Сказочное заморское яство</p>
+              <h3 class="card__title">Нямушка</h3>
+              <p class="card__subtitle">с фуа-гра</p>
+              <ul class="card__features features">
+                <li class="features__item"><b>10</b> порций</li>
+                <li class="features__item">мышь в подарок</li>
+              </ul>
+              <div class="card__weight weight">
+                <span class="weight__number">0,5</span>кг
+              </div>
+            </div>
+            <div class="card__offer">
+              Чего сидишь? Порадуй котэ, <a href="#"> купи.</a>
             </div>
           </div>
-          <div class="card__offer">
-            Чего сидишь? Порадуй котэ, <a href="#"> купи.</a>
+          <div class="cards__item card">
+            <div class="card__wrapper">
+              <p class="card__slogan">Сказочное заморское яство</p>
+              <h3 class="card__title">Нямушка</h3>
+              <p class="card__subtitle">с рыбой</p>
+              <ul class="card__features features">
+                <li class="features__item"><b>40</b> порций</li>
+                <li class="features__item"><b>2</b> мыши в подарок</li>
+              </ul>
+              <div class="card__weight weight">
+                <span class="weight__number">2</span>кг
+              </div>
+            </div>
+            <div class="card__offer">
+              Чего сидишь? Порадуй котэ, <a href="#"> купи.</a>
+            </div>
           </div>
-        </div>
-        <div class="cards__item card">
-          <p class="card__slogan">Сказочное заморское яство</p>
-          <h3 class="card__title">Нямушка</h3>
-          <p class="card__subtitle">с рыбой</p>
-          <ul class="card__features features">
-            <li class="features__item"><b>40</b> порций</li>
-            <li class="features__item"><b>2</b> мыши в подарок</li>
-          </ul>
-          <div class="card__weight weight">
-            <span class="weight__number">2</span>кг
-          </div>
-        </div>
-        <div class="cards__item card">
-          <p class="card__slogan">Сказочное заморское яство</p>
-          <h3 class="card__title">Нямушка</h3>
-          <p class="card__subtitle">с курой</p>
-          <ul class="card__features features">
-            <li class="features__item"><b>100</b> порций</li>
-            <li class="features__item"><b>5</b>мышей в подарок</li>
-            <li class="features__item">заказчик доволен</li>
-          </ul>
-          <div class="card__weight weight">
-            <span class="weight__number">5</span>кг
+          <div class="cards__item card">
+            <div class="card__wrapper">
+              <p class="card__slogan">Сказочное заморское яство</p>
+              <h3 class="card__title">Нямушка</h3>
+              <p class="card__subtitle">с курой</p>
+              <ul class="card__features features">
+                <li class="features__item"><b>100</b> порций</li>
+                <li class="features__item"><b>5</b>мышей в подарок</li>
+                <li class="features__item">заказчик доволен</li>
+              </ul>
+              <div class="card__weight weight">
+                <span class="weight__number">5</span>кг
+              </div>
+            </div>
+            <div class="card__offer">
+              Чего сидишь? Порадуй котэ, <a href="#"> купи.</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</body>
-
+    </section>
+  </body>
 </html>
