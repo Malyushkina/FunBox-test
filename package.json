@@ -30,5 +30,5 @@
     "gulp-sourcemaps": "^2.6.5",
     "pixel-glass": "^1.0.13",
     "yargs-parser": "^20.0.0"
-  }
+      }
 }
