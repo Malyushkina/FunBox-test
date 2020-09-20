@@ -1,6 +1,7 @@
 let cards = document.querySelectorAll(".card");
 let catalog = document.querySelector(".catalog");
 let weight = document.querySelectorAll(".weight__number");
+
 window.onload = function () {
   //секция catalog центрируется, если карточек не больше 3
   if (cards.length <= 3) {
@@ -36,3 +37,15 @@ function weightNumber() {
   }
 }
 weightNumber();
+function disabledText() {
+  //меняет текст, если находит в карточке класс .disabled, подставляет вкус
+  for (let j = 0; j < cards.length; j++) {
+    if (cards[j].classList.contains("disabled")) {
+      let cardOffer = cards[j].querySelector(".card__offer");
+      let cardSubtitle = cards[j].querySelector(".card__subtitle");
+      let taste = cardSubtitle.textContent;
+      cardOffer.textContent = "Печалька, " + taste + " закончился.";
+    }
+  }
+}
+disabledText();
