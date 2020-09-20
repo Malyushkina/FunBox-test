@@ -1,22 +1,21 @@
 .card {
-  // display: grid;
-  // row-gap: 5px;
   position: relative;
   padding-top: 25px;
   padding-left: 47px;
   padding-right: 50px;
   padding-bottom: 100px;
   margin-bottom: 50px;
-  background-image: url(".././img/card-border.svg"), url(".././img/cat@1x.png"), url(".././img/card-bg.svg");
+  background-image: url(".././img/cat@1x.png"), url(".././img/card-bg.svg");
   background-repeat: no-repeat;
-  background-position: 100% 3px, -25px 171%, 100% 3px;
-  background-size: 100% 100%, 115%, 100% 100%;
+  background-position: -25px 171%, 100% 3px;
+  background-size: 115%, 101% 100%;
   width: 322px;
   box-sizing: border-box;
   min-height: 485px;
   border-radius: 15px;
-  @media(min-resolution:2dppx){
-    background-image: url(".././img/card-border.svg"), url(".././img/cat@2x.png"), url(".././img/card-bg.svg");
+
+  @media(min-resolution:2dppx) {
+    background-image: url(".././img/cat@2x.png"), url(".././img/card-bg.svg");
   }
 
   &:first-of-type {
@@ -28,6 +27,7 @@
   &:nth-of-type(2) {
     grid-area: card2;
   }
+
   &:nth-of-type(3) {
     grid-area: card3;
   }
@@ -56,6 +56,16 @@
     left: 55px;
     font-size: 13px;
     color: #ffffff;
+  }
+
+  &__border {
+    position: absolute;
+    top: 2px;
+    left: -2.5px;
+    width: 101%;
+    height: 100%;
+    stroke: #1698d9;
+    fill: transparent;
   }
 }
 

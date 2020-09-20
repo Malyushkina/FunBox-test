@@ -39,9 +39,21 @@
   color: #ffffff;
   text-align: center;
 }
-.center{
+
+.center {
   @media (min-width: @desktop-width) {
-		top: 50vh;
-		transform: translateY(-50%);
-	}
+    top: 50vh;
+    transform: translateY(-50%);
+  }
+}
+
+.disabled {
+  .card__border {
+    stroke: #b3b3b3;
+    fill: rgba(255, 255, 255, 0.5)
+  }
+
+  .weight {
+    background-color:darken(#b3b3b3,25%) ;
+  }
 }
