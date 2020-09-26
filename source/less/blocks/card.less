@@ -13,7 +13,7 @@
   box-sizing: border-box;
   min-height: 485px;
   border-radius: 15px;
-
+  
   @media(min-resolution:2dppx) {
     background-image: url(".././img/cat@2x.png"), url(".././img/card-bg.svg");
   }
@@ -53,7 +53,9 @@
   &__offer {
     position: absolute;
     bottom: -27px;
-    left: 55px;
+    left: 0px;
+    text-align: center;
+    width: 100%;
     font-size: 13px;
     color: #ffffff;
   }
@@ -64,7 +66,7 @@
     left: -2.5px;
     width: 101%;
     height: 100%;
-    stroke: #1698d9;
+    stroke: @color__card--default;
     fill: transparent;
   }
 }

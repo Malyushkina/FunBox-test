@@ -7,7 +7,11 @@ window.onload = function () {
   if (cards.length <= 3) {
     catalog.classList.add("center");
   }
+  for (let j = 0; j < cards.length; j++) {
+    cards[j].addEventListener("click", cardOnClick);
+  }
 };
+
 function weightNumber() {
   //подарки меняются в зависимости от веса
   for (let i = 0; i < weight.length; i++) {
@@ -37,15 +41,57 @@ function weightNumber() {
   }
 }
 weightNumber();
-function disabledText() {
-  //меняет текст, если находит в карточке класс .disabled, подставляет вкус
+
+function status() {
   for (let j = 0; j < cards.length; j++) {
     if (cards[j].classList.contains("disabled")) {
+      //меняет текст, если находит в карточке класс .disabled, подставляет вкус
       let cardOffer = cards[j].querySelector(".card__offer");
       let cardSubtitle = cards[j].querySelector(".card__subtitle");
       let taste = cardSubtitle.textContent;
       cardOffer.textContent = "Печалька, " + taste + " закончился.";
     }
+    if (cards[j].classList.contains("selected")) {
+      //меняет текст, если находит в карточке класс .disabled, подставляет вкус
+      let cardOffer = cards[j].querySelector(".card__offer");
+      let cardSubtitle = cards[j].querySelector(".card__subtitle");
+      let taste = cardSubtitle.textContent;
+
+      if (taste == "с фуа-гра") {
+        cardOffer.textContent = "Печень утки разварная с артишоками.";
+      }
+      if (taste == "с рыбой") {
+        cardOffer.textContent =
+          "Головы щучьи с чесноком да свежайшая сёмгушка.";
+      }
+      if (taste == "с курой") {
+        cardOffer.textContent = "Филе из цыплят с трюфелями в бульоне.";
+      }
+      // this.onmouseenter = changeText();
+      // this.onmouseleave = changeText();
+    }
+    if (cards[j].classList.contains("default")) {
+      let cardOffer = cards[j].querySelector(".card__offer");
+      cardOffer.innerHTML =
+        "Чего сидишь? Порадуй котэ, <a href=" + "#" + "> купи.</a>";
+    }
   }
 }
-disabledText();
+
+status();
+
+function cardOnClick() {
+  if (this.classList.contains("default")) {
+    this.classList.remove("default");
+    this.classList.add("selected");
+
+    status();
+  } else if (this.classList.contains("selected")) {
+    this.classList.add("default");
+    this.classList.remove("selected");
+    status();
+  }
+}
+function changeText() {
+  console.log("Навели мышь");
+}

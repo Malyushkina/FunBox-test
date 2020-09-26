@@ -48,8 +48,10 @@
 }
 
 .disabled {
+  cursor: default;
+
   .card__border {
-    stroke: #b3b3b3;
+    stroke: @color__card--disabled;
     fill: rgba(255, 255, 255, 0.5)
   }
 
@@ -58,6 +60,46 @@
   }
 
   .weight {
-    background-color: darken(#b3b3b3, 25%);
+    background-color: darken(@color__card--disabled, 25%);
+  }
+}
+
+.default {
+  cursor: pointer;
+
+  &:hover .card__border {
+    stroke: @color__text--default-hover;
+  }
+
+  &:hover .weight {
+    background-color: @color__text--default-hover;
+  }
+}
+
+.selected {
+  cursor: pointer;
+
+  .card__border {
+    stroke: @color__card--selected;
+  }
+
+  .card__offer {
+    color: @color__text--selected;
+  }
+
+  .weight {
+    background-color: @color__card--selected;
+  }
+
+  &:hover .card__slogan {
+    color: @color__card--selected-hover;
+  }
+
+  &:hover .card__border {
+    stroke: @color__card--selected-hover;
+  }
+
+  &:hover .weight {
+    background-color: @color__card--selected-hover;
   }
 }
