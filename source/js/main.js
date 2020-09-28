@@ -7,9 +7,11 @@ window.onload = function () {
   if (cards.length <= 3) {
     catalog.classList.add("center");
   }
+
   for (let j = 0; j < cards.length; j++) {
     cards[j].addEventListener("click", cardOnClick);
   }
+  status();
 };
 
 function weightNumber() {
@@ -44,47 +46,31 @@ weightNumber();
 
 function status() {
   for (let j = 0; j < cards.length; j++) {
+    var card = cards[j];
+    if (cards[j].classList.contains("default")) {
+      statusDefault(card);
+    }
     if (cards[j].classList.contains("disabled")) {
-      //меняет текст, если находит в карточке класс .disabled, подставляет вкус
-      let cardOffer = cards[j].querySelector(".card__offer");
-      let cardSubtitle = cards[j].querySelector(".card__subtitle");
-      let taste = cardSubtitle.textContent;
-      cardOffer.textContent = "Печалька, " + taste + " закончился.";
+      statusDisabled(card);
     }
     if (cards[j].classList.contains("selected")) {
-      //меняет текст, если находит в карточке класс .disabled, подставляет вкус
-      let cardOffer = cards[j].querySelector(".card__offer");
-      let cardSubtitle = cards[j].querySelector(".card__subtitle");
-      let taste = cardSubtitle.textContent;
-
-      if (taste == "с фуа-гра") {
-        cardOffer.textContent = "Печень утки разварная с артишоками.";
-      }
-      if (taste == "с рыбой") {
-        cardOffer.textContent =
-          "Головы щучьи с чесноком да свежайшая сёмгушка.";
-      }
-      if (taste == "с курой") {
-        cardOffer.textContent = "Филе из цыплят с трюфелями в бульоне.";
-      }
-      // this.onmouseenter = changeText();
-      // this.onmouseleave = changeText();
+      statusSelected(card);
     }
-    if (cards[j].classList.contains("default")) {
-      let cardOffer = cards[j].querySelector(".card__offer");
-      cardOffer.innerHTML =
-        "Чего сидишь? Порадуй котэ, <a href=" + "#" + "> купи.</a>";
+    if (
+      !cards[j].classList.contains("default") &&
+      !cards[j].classList.contains("disabled") &&
+      !cards[j].classList.contains("selected")
+    ) {
+      cards[j].classList.add("default");
+      statusDefault(card);
     }
   }
 }
-
-status();
 
 function cardOnClick() {
   if (this.classList.contains("default")) {
     this.classList.remove("default");
     this.classList.add("selected");
-
     status();
   } else if (this.classList.contains("selected")) {
     this.classList.add("default");
@@ -92,6 +78,47 @@ function cardOnClick() {
     status();
   }
 }
-function changeText() {
-  console.log("Навели мышь");
+function statusDefault(evt) {
+  //меняет текст, если находит в карточке класс .default, подставляет оффер
+  let cardOffer = evt.querySelector(".card__offer");
+  cardOffer.innerHTML =
+    "Чего сидишь? Порадуй котэ, <a href=" + "#" + "> купи.</a>";
+  evt.removeEventListener("mouseenter", statusSelectedHover);
+  evt.removeEventListener("mouseleave", statusSelectedHoverOff);
+  let cardSlogan = evt.querySelector(".card__slogan");
+  cardSlogan.textContent = "Сказочное заморское яство";
+}
+
+function statusDisabled(evt) {
+  //меняет текст, если находит в карточке класс .disabled, подставляет вкус
+  let cardOffer = evt.querySelector(".card__offer");
+  let cardSubtitle = evt.querySelector(".card__subtitle");
+  let taste = cardSubtitle.textContent;
+  cardOffer.textContent = "Печалька, " + taste + " закончился.";
+}
+
+function statusSelected(evt) {
+  //меняет текст, если находит в карточке класс .selected, подставляет вкус  и меняет оффер в зависимости от вкуса
+  let cardOffer = evt.querySelector(".card__offer");
+  let cardSubtitle = evt.querySelector(".card__subtitle");
+  let taste = cardSubtitle.textContent;
+  evt.addEventListener("mouseenter", statusSelectedHover);
+  evt.addEventListener("mouseleave", statusSelectedHoverOff);
+  if (taste == "с фуа-гра") {
+    cardOffer.textContent = "Печень утки разварная с артишоками.";
+  }
+  if (taste == "с рыбой") {
+    cardOffer.textContent = "Головы щучьи с чесноком да свежайшая сёмгушка.";
+  }
+  if (taste == "с курой") {
+    cardOffer.textContent = "Филе из цыплят с трюфелями в бульоне.";
+  }
+}
+function statusSelectedHover() {
+  let cardSlogan = this.querySelector(".card__slogan");
+  cardSlogan.textContent = "Котэ не одобряет?";
+}
+function statusSelectedHoverOff() {
+  let cardSlogan = this.querySelector(".card__slogan");
+  cardSlogan.textContent = "Сказочное заморское яство";
 }
