@@ -1,0 +1,53 @@
+.container {
+  margin: 0 auto;
+  width: 320px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 712px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    width: 1120px;
+  }
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  white-space: nowrap;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  overflow: hidden;
+}
+
+.section-title {
+  padding: 0;
+  margin: 0;
+  font-family: "Exo2", "Arial", sans-serif;
+  font-size: 36px;
+  font-weight: 100;
+  line-height: 1;
+  color: #ffffff;
+}
+
+@font-face {
+  font-family: "Exo2";
+  font-weight: 100;
+  font-style: thin;
+  font-display: swap;
+  src: url("../fonts/exo2thin.woff2") format("woff2"), url("../fonts/exo2thin.woff2") format("woff");
+}
+
+body {
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
