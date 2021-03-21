@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "Exo2";
+    font-weight: 100;
+    font-style: thin;
+    font-display: swap;
+    src: url("../../fonts/exo2thin.woff2") format("woff2"), url("../../fonts/exo2thin.woff") format("woff");
+}
+
+.page-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 400px;
+    min-height: 100vh;
+    margin: 0;
+
+    padding: 0;
+    background-color: #000000;
+    background-image: linear-gradient(to top,
+            rgba(0, 0, 0, 0.5),
+            transparent,
+            rgba(0, 0, 0, 0.5)),
+        url("../../img/bg@1x.jpg");
+    background-size: 100% 100%, auto;
+    background-repeat: no-repeat, repeat;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1120px;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    position: absolute;
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    white-space: nowrap;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    overflow: hidden;
+}
