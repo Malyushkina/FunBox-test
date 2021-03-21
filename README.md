@@ -1,4 +1,6 @@
 # Нямушка
-ветка master : less, gulp, БЭМ
-ветка react : react
+<ul>
+  <li>ветка master : less, gulp, БЭМ</li>
+  <li>ветка react : react</li>
+</ul>  
 
